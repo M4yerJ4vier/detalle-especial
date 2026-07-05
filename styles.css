@@ -1,0 +1,149 @@
+/* Configuración General */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial', sans-serif;
+    background-color: #ffeef2; /* Rosado pastel muy suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.contenedor-principal {
+    width: 90%;
+    max-width: 450px;
+    perspective: 1000px;
+}
+
+/* Tarjetas */
+.tarjeta, .tarjeta-carta {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
+    text-align: center;
+    border: 3px solid #ffb6c1;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.tarjeta-carta {
+    background: #fffafb;
+    border: 2px dashed #ff6b8b;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* Títulos y Textos */
+h2, h1 {
+    color: #ff527b;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #634a50;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.firma {
+    font-weight: bold;
+    color: #ff527b;
+    margin-top: 25px;
+    text-align: right;
+}
+
+/* Imágenes/GIFs */
+.gif-kitty {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.gif-kitty-carta {
+    width: 90px;
+    margin-top: 15px;
+}
+
+/* Botones */
+.btn {
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+    margin: 10px;
+    font-family: inherit;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-si, .btn-abrir {
+    background-color: #ff6b8b;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+}
+
+.btn-no {
+    background-color: #f0e2e5;
+    color: #a38a90;
+}
+
+.borde-flores {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    color: #ffb6c1;
+    margin: 10px 0;
+}
+
+/* Decoraciones animadas de fondo */
+.decoraciones {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.flotante {
+    position: absolute;
+    font-size: 2rem;
+    bottom: -50px;
+    animation: flotar 8s linear infinite;
+    opacity: 0.7;
+}
+
+/* Distribución aleatoria inicial para las calcomanías */
+.flotante:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 6s; }
+.flotante:nth-child(2) { left: 30%; animation-delay: 2s; animation-duration: 8s; }
+.flotante:nth-child(3) { left: 55%; animation-delay: 1s; animation-duration: 7s; }
+.flotante:nth-child(4) { left: 75%; animation-delay: 4s; animation-duration: 9s; }
+.flotante:nth-child(5) { left: 90%; animation-delay: 3s; animation-duration: 5s; }
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}

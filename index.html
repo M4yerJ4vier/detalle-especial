@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un detalle especial ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="decoraciones">
+        <span class="flotante">🌸</span>
+        <span class="flotante">✨</span>
+        <span class="flotante">🐱</span>
+        <span class="flotante">💖</span>
+        <span class="flotante">🌸</span>
+    </div>
+
+    <div class="contenedor-principal">
+        
+        <div id="pantalla-musica" class="tarjeta">
+            <img src="https://media.tenor.com/AOEUuNp0RoAAAAAM/hello-kitty-hi.gif" alt="Hello Kitty Piano" class="gif-kitty">
+            <h2>Una canción para ti... 🌸</h2>
+            
+            <p>¿Te gustaría activar la música de fondo para leer la carta?(recomendado que si)</p>
+            <div class="botones">
+                <button onclick="gestionarMusica(true)" class="btn btn-si">Sí, por favor ✨</button>
+                <button onclick="gestionarMusica(false)" class="btn btn-no">No, gracias</button>
+            </div>
+        </div>
+
+        <div id="pantalla-sobre" class="tarjeta oculto">
+            <img src="https://i.pinimg.com/originals/be/68/19/be6819a60d1d642b43ae607ea853253c.gif" alt="Hello Kitty Love" class="gif-kitty">
+            <h2>¡Tienes una carta! ✉️</h2>
+            <p>Haz clic abajo para abrirla...</p>
+            <button onclick="abrirCarta()" class="btn btn-abrir">Abrir Carta 💖</button>
+        </div>
+
+        <div id="pantalla-carta" class="tarjeta-carta oculto">
+            <div class="borde-flores">🌸 🌸 🌸 🌸 🌸 🌸 🌸</div>
+            
+            <div class="contenido-texto">
+                <h1>Para la chica más especial para mi ✨</h1>
+                <p>Hola Zannie,Quería hacerte un detalle totalmente diferente, hecho a mi manera y combinando cosas que me recuerdan a ti (no se si te gusta HelloKitty).</p>
+                <p>No me canso de decir lo hermosa que eres para mi, y quiero que sepas que realmente te quiero mucho... talves ya te canse de decirte lo mismo pero es lo que siento de verdad, y si no te lo digo mi corazon no esta feliz y es por eso y para eso que te hice este pequeño detalle que espero te guste mucho, lo que siento por ti es verdadero y no me importa si estamos a km de distancia porque mi amor no se limita por brechas fisicas. Y aunque tu no me ames yo si te amare porque ya no puedo evitarlo, aunque creas que no sea el momento, ¡¡Estoy enamorado de ti pues y que va a pasar!!</p>
+                <p class="firma">Con mucho amor, <br> Mayer </p>
+            </div>
+
+            <img src="https://i.pinimg.com/originals/44/30/7e/44307eb4a120068376a9997215ae85f3.gif" alt="Hello Kitty Bye" class="gif-kitty-carta">
+            <div class="borde-flores">🌸 🌸 🌸 🌸 🌸 🌸 🌸</div>
+        </div>
+    </div>
+
+    <audio id="musica-fondo" src="https://drive.google.com/uc?export=download&id=1m2wzEtY9AgeHMxE7Xeiy7SBM-VCHPr5E" loop></audio>
+
+    <script>
+        const musica = document.getElementById('musica-fondo');
+
+        // Controla la reproducción local e intercambia la pantalla
+        function gestionarMusica(reproducir) {
+            if (reproducir) {
+                musica.play().catch(e => console.log("El navegador bloqueó el autoplay o no encuentra el archivo: ", e));
+            }
+            document.getElementById('pantalla-musica').classList.add('oculto');
+            document.getElementById('pantalla-sobre').classList.remove('oculto');
+        }
+
+        // Pasa del sobre a la carta abierta
+        function abrirCarta() {
+            document.getElementById('pantalla-sobre').classList.add('oculto');
+            document.getElementById('pantalla-carta').classList.remove('oculto');
+        }
+    </script>
+</body>
+</html>
